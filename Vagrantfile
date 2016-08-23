@@ -91,16 +91,16 @@ ssh_port = 22
 
 Vagrant.configure("2") do |config|
 
-config.vm.box = "boxcutter/ubuntu1504"
-config.vm.box_url = "https://atlas.hashicorp.com/boxcutter/boxes/ubuntu1504.json"
+config.vm.box = "boxcutter/ubuntu1510"
+config.vm.box_url = "https://atlas.hashicorp.com/boxcutter/boxes/ubuntu1510.json"
 config.vm.boot_timeout = 1000
 
   config.vm.provider :vmware_fusion do |vb, override|
-  override.vm.box_url = "https://atlas.hashicorp.com/boxcutter/boxes/ubuntu1504.json"
+  override.vm.box_url = "https://atlas.hashicorp.com/boxcutter/boxes/ubuntu1510.json"
   end
 
   #config.vm.provider :virtualbox do |vb, override|
-  #  override.vm.box = "bento/ubuntu-15.04"
+  #  override.vm.box = "bento/ubuntu-15.10"
   #end
   
 	
@@ -190,7 +190,7 @@ config.vm.boot_timeout = 1000
         config.vm.provider :virtualbox do |vb, override|
           vb.customize ["modifyvm", :id, "--natdnshostresolver1", "off"]
           vb.customize ["modifyvm", :id, "--natdnsproxy1", "off"]
-          override.vm.box = "bento/ubuntu-15.04"
+          override.vm.box = "bento/ubuntu-15.10"
         end
       end
 
