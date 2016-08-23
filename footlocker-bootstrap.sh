@@ -178,10 +178,11 @@ ssh_master_command "sudo ~/keyscanner.sh ${keyscantargets}"
 
 #ssh into the build node and pull the ansible container that will bootstrap all the footlocker hosts
 echo "Pulling build container...."
-ssh_master_command "docker pull stlalpha/theansible"
+#ssh_master_command "docker pull stlalpha/theansible"
+ssh_master_command "docker pull stlalpha/testansible"
 echo "Building...."
 #ssh into the build node and execute the ansible container with the NODES arg set to the footlocker targets list yoiu built above
-ssh_master_command "sudo docker run -v /root/.ssh/id_rsa:/keys/priv -v /root/.ssh/id_rsa.pub:/keys/pub -e NODES=${footlockertargets} stlalpha/theansible"
+ssh_master_command "sudo docker run -v /root/.ssh/id_rsa:/keys/priv -v /root/.ssh/id_rsa.pub:/keys/pub -e NODES=${footlockertargets} stlalpha/testansible"
 
 #cleanup - unless you set debug then leave the logs laying around so you can figure out whats going on
 if [ "$3" != "debug" ] ; then
