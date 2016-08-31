@@ -146,7 +146,8 @@
 
     - name: Get custom Docker binary
       sudo: yes
-      get_url: dest=/usr/bin/docker force=yes url=https://raw.githubusercontent.com/stlalpha/docker/master/docker-1.7.0-dev
+#      get_url: dest=/usr/bin/docker force=yes url=https://raw.githubusercontent.com/stlalpha/docker/master/docker-1.7.0-dev
+      get_url: dest=/usr/bin/docker force=yes url=https://github.com/boucher/docker/releases/download/v1.10_2-16-16-experimental/docker-1.10.0-dev
       notify:
         - Restart docker
 
