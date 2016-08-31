@@ -147,6 +147,10 @@
     - name: Get custom Docker binary
       sudo: yes
       get_url: dest=/usr/bin/docker force=yes url=https://github.com/boucher/docker/releases/download/v1.10_2-16-16-experimental/docker-1.10.0-dev
+
+
+    - name: Get docker service file
+      sudo: yes
       get_url: dest=/lib/systemd/system/docker.service force=yes url=https://raw.githubusercontent.com/stlalpha/cnvm/master/ansible/docker.service
 
     - name: Reload systemd for docker
