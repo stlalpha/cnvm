@@ -93,7 +93,7 @@
 
     - name: Clone cnvm repo
       git:
-        repo: "https://github.com/gonkulator/cnvm.git"
+        repo: "https://github.com/stlalpha/cnvm.git"
         dest: "{{ ansible_user_dir }}/cnvm"
         accept_hostkey: yes
 
