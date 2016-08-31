@@ -146,8 +146,7 @@
 
     - name: Get custom Docker binary
       sudo: yes
-#      get_url: dest=/usr/bin/docker force=yes url=https://bintray.com/artifact/download/colebrumley/CNVM_Docker/pre-release-1/docker
-      get_url: dest=/usr/bin/docker force=yes url=https://github.com/stlalpha/docker/blob/master/docker-1.7.0-dev?raw=true
+      get_url: dest=/usr/bin/docker force=yes url=https://raw.githubusercontent.com/stlalpha/docker/master/docker-1.7.0-dev
       notify:
         - Restart docker
 
