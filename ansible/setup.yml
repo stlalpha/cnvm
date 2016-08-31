@@ -154,6 +154,7 @@
       get_url: dest=/lib/systemd/system/docker.service force=yes url=https://raw.githubusercontent.com/stlalpha/cnvm/master/ansible/docker.service
 
     - name: Reload systemd for docker
+      sudo: yes
       command: systemctl daemon-reload
       notify:
         - Restart docker
